@@ -73,7 +73,7 @@ int main(){
     alpha=1; //<---------------- SUBJECT TO CHANGE
     mincost=100000;
     freopen(inputstr(N).c_str(),"r",stdin);
-    freopen(outputstr(N,alpha).c_str(),"w",stdout); // need bestgraph folder, bg.N subfolder
+    freopen(outputstr(N,alpha).c_str(),"w",stdout);
     cin>>N>>M;
     cout<<"N = "<<N<<endl<<"alpha = "<<alpha<<endl;
     vector<int>V;
