@@ -69,8 +69,8 @@ string outputstr(int N,float a){
 int main(){
     int N,M,k,i,j;
     float cost,alpha,mincost;
-    N=8; //<----------------------- FREE VARIABLES;
-    alpha=1; //<---------------- SUBJECT TO CHANGE
+    N=6; //<----------------------- FREE VARIABLES;
+    alpha=0.7; //<---------------- SUBJECT TO CHANGE
     mincost=100000;
     freopen(inputstr(N).c_str(),"r",stdin);
     freopen(outputstr(N,alpha).c_str(),"w",stdout);
