@@ -94,7 +94,6 @@ int main(){
         else if (cost==mincost){
             V.push_back(k);
         }
-        //cout<<cost<<endl;
     }
     cout<<"min. cost = "<<mincost<<endl<<endl<<V.size()<<" graph(s) minimizing cost"<<endl<<"=========================";
     for (i=0;i<=floor(log10(V.size()));i=i+1){
