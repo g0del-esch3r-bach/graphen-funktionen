@@ -3,7 +3,7 @@
 #include<vector>
 #include<cstdio>
 #include<cmath>
-#include<string> // do the fancy string stuff
+#include<string>
 using namespace std;
 float avgdist(int A[][100],int N){
     int D[N][N],i,j,k;
