@@ -49,13 +49,15 @@ float numedge(int A[][1000],int N){
 int main(){
     freopen("adj.txt","r",stdin);
     int N,i,j;
-    cin>>N;
+    float alpha,cost;
+    cin>>N>>alpha;
     int A[N][1000];
     for (i=0;i<=N-1;i=i+1){
         for (j=0;j<=N-1;j=j+1){
             cin>>A[i][j];
         }
     }
+    cost=3*alpha*avgdist(A,N)/((float)(N+1))+2*(1-alpha)*numedge(A,N)/((float)(N*(N-1)));
     cout<<avgdist(A,N)<<" "<<numedge(A,N);
     return 0;
 }
