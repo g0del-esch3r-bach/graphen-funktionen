@@ -58,6 +58,6 @@ int main(){
         }
     }
     cost=3*alpha*avgdist(A,N)/((float)(N+1))+2*(1-alpha)*numedge(A,N)/((float)(N*(N-1)));
-    cout<<"L = "<<avgdist(A,N)<<endl<<"E = "<<numedge(A,N)<<endl<<" c(G,α) = "<<cost;
+    cout<<"L = "<<avgdist(A,N)<<"    |    "<<"E = "<<numedge(A,N)<<"    |    "<<" c(G,α) = "<<cost;
     return 0;
 }
