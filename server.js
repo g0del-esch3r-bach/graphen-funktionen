@@ -15,18 +15,25 @@ app.use(bodyParser.text({ type: 'text/plain' }));
 
 app.post('/calculate', (req, res) => {
   const inputData = req.body;
-  const executablePath = path.join(__dirname, 'functions', 'edges');
+  const executables = ['avgdist', 'cancho', 'edges', 'efficiency'];
+  const results = {};
+  let completed = 0;
 
-  const process = execFile(executablePath, { encoding: 'utf8' }, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error executing: ${error}`);
-      return res.status(500).send(stderr);
-    }
-    res.send(stdout);
+  executables.forEach(execName => {
+    const executablePath = path.join(__dirname, 'functions', process.platform === 'win32' ? execName + '.exe' : execName);
+    execFile(executablePath, { encoding: 'utf8' }, (error, stdout, stderr) => {
+      if (error) {
+        results[execName] = "Error: " + stderr;
+      } else {
+        results[execName] = stdout.trim();
+      }
+      completed++;
+      // When all processes have completed, send the JSON response.
+      if (completed === executables.length) {
+        res.json(results);
+      }
+    }).stdin.end(inputData);
   });
-
-  process.stdin.write(inputData);
-  process.stdin.end();
 });
 
 const PORT = process.env.PORT || 3000;

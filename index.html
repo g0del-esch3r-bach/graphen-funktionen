@@ -2,10 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>G31-CCF</title>
+  <title>Matrix Calculator</title>
   <style>
+    /* Use Cascadia Mono for all text elements */
+    body, input, textarea, button, label {
+      font-family: 'Cascadia Mono', monospace;
+    }
     body {
-      font-family: Arial, sans-serif;
       margin: 20px;
     }
     label {
@@ -13,7 +16,19 @@
       margin-top: 10px;
     }
     textarea {
-      font-family: monospace;
+      font-family: 'Cascadia Mono', monospace;
+      font-size: 14px;
+    }
+    input, button {
+      font-size: 14px;
+    }
+    /* Style for the blue result boxes */
+    .result-box {
+      background-color: #cce5ff;  /* Light blue background */
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #007bff;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -35,21 +50,21 @@
     <button type="button" onclick="submitForm()">go</button>
   </form>
 
-  <h2><span id="result"></span></h2>
+  <h2>res</h2>
+  <div id="resultsContainer"></div>
 
   <script>
     function submitForm() {
-      // Get the values from the inputs
+      // Get input values
       const x = document.getElementById('xInput').value.trim();
       const y = document.getElementById('yInput').value.trim();
       const matrix = document.getElementById('matrixInput').value.trim();
       
-      // Combine them into one input string, matching the input order your C++ program expects:
-      // First line: x, Second line: y, then the matrix lines.
+      // Combine input in the order expected by your C++ programs:
       const inputData = x + "\n" + y + "\n" + matrix;
       
-      // Send the input data to the server endpoint using a POST request.
-      fetch('/calculate', {  // Ensure your server routes POST /calculate appropriately!
+      // Send the data to the backend. The backend should return a JSON object with outputs.
+      fetch('/calculate', {
         method: 'POST',
         headers: {
           'Content-Type': 'text/plain'
@@ -60,15 +75,27 @@
         if (!response.ok) {
           throw new Error("Server error: " + response.statusText);
         }
-        return response.text();
+        return response.json();  // Expecting a JSON response
       })
-      .then(result => {
-        // Display the result returned by your C++ program.
-        document.getElementById('result').textContent = result;
+      .then(results => {
+        // Clear any previous results
+        const container = document.getElementById('resultsContainer');
+        container.innerHTML = '';
+
+        // Iterate over each result (calc, calc2, calc3, calc4) and create a blue box for each
+        for (const key in results) {
+          if (results.hasOwnProperty(key)) {
+            const div = document.createElement('div');
+            div.className = 'result-box';
+            div.textContent = key + ": " + results[key];
+            container.appendChild(div);
+          }
+        }
       })
       .catch(error => {
         console.error('Error:', error);
-        document.getElementById('result').textContent = 'Error: ' + error.message;
+        document.getElementById('resultsContainer').innerHTML =
+          '<div class="result-box">Error: ' + error.message + '</div>';
       });
     }
   </script>
