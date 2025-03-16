@@ -67,6 +67,6 @@ int main(){
     if (avgdist(A,N)==INT_MAX){
         cost=INT_MAX;
     }
-    cout<<"c(G,α) = "<<cost;
+    cout<<"C(G) = "<<cost;
     return 0;
 }
