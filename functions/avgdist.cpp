@@ -36,7 +36,7 @@ float avgdist(int A[][1000],int N){
         }
     }
     if (ans<0){
-        return -1;
+        return INT_MAX;
     }
     ans=ans/(N*(N-1)/2);
     return ans;

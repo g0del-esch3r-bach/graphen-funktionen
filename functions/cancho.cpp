@@ -36,7 +36,7 @@ float avgdist(int A[][1000],int N){
         }
     }
     if (ans<0){
-        return -1;
+        return INT_MAX;
     }
     ans=ans/(N*(N-1)/2);
     return ans;
@@ -64,8 +64,8 @@ int main(){
         }
     }
     cost=3*alpha*avgdist(A,N)/((float)(N+1))+2*(1-alpha)*numedge(A,N)/((float)(N*(N-1)));
-    if (avgdist(A,N)==-1){
-        cost=-1;
+    if (avgdist(A,N)==INT_MAX){
+        cost=INT_MAX;
     }
     cout<<" c(G,α) = "<<cost;
     return 0;
