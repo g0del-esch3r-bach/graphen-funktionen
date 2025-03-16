@@ -48,6 +48,6 @@ int main(){
             cin>>A[i][j];
         }
     }
-    cout<<"L = "<<efficiency(A,N);
+    cout<<"efficiency  | E(G) = "<<efficiency(A,N);
     return 0;
 }
