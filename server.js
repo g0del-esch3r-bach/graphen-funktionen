@@ -15,11 +15,11 @@ app.use(bodyParser.text({ type: 'text/plain' }));
 
 app.post('/calculate', (req, res) => {
   const inputData = req.body;
-  const executablePath = path.join(__dirname, 'elements');
+  const executablePath = path.join(__dirname, 'edges');
 
   const process = execFile(executablePath, { encoding: 'utf8' }, (error, stdout, stderr) => {
     if (error) {
-      console.error(`Error executing elements: ${error}`);
+      console.error(`Error executing: ${error}`);
       return res.status(500).send(stderr);
     }
     res.send(stdout);
