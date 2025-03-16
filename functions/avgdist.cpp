@@ -52,6 +52,6 @@ int main(){
             cin>>A[i][j];
         }
     }
-    cout<<"avg dist    | D(G) = "<<avgdist(A,N);
+    cout<<"D(G) = "<<avgdist(A,N);
     return 0;
 }

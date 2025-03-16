@@ -4,6 +4,4 @@ elements.cpp takes in an adjacency matrix and value alpha and outputs the two va
 
 i have no clue how to dev using HTML and JS, so i got gpt to do it for me. how embarassing!
 
-ok finally it worked??
-
-https://g31-ccf.vercel.app/
+ok finally it worked, localhost:3000

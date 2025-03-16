@@ -67,6 +67,6 @@ int main(){
     if (avgdist(A,N)==INT_MAX){
         cost=INT_MAX;
     }
-    cout<<"cancho cost | c(G,α) = "<<cost;
+    cout<<"c(G,α) = "<<cost;
     return 0;
 }
