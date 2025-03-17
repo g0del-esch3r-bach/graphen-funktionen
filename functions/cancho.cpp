@@ -1,7 +1,7 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-const int INFTY = 99999;
+//const int INFTY = 99999;
 float avgdist(int A[][1000],int N){
     int D[N][N],i,j,k;
     float ans;
@@ -14,7 +14,7 @@ float avgdist(int A[][1000],int N){
                 D[i][j]=1;
             }
             else {
-                D[i][j]=INFTY;
+                D[i][j]=INT_MAX;
             }
         }
     }
@@ -30,7 +30,7 @@ float avgdist(int A[][1000],int N){
     ans=0;
     for (i=0;i<=N-1;i=i+1){
         for (j=0;j<=i-1;j=j+1){
-            if (D[i][j]==INFTY){
+            if (D[i][j]==INT_MAX){
                 return INT_MAX;
             }
             ans+=D[i][j];

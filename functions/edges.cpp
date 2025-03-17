@@ -1,7 +1,6 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-const int INFTY = 99999;
 float numedge(int A[][1000],int N){
     int i,j;
     float ans;
