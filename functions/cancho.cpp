@@ -13,7 +13,7 @@ float avgdist(int A[][1000],int N){
             else if (A[i][j]==1){
                 D[i][j]=1;
             }
-            else {
+            else{
                 D[i][j]=INT_MAX;
             }
         }
@@ -21,6 +21,9 @@ float avgdist(int A[][1000],int N){
     for (k=0;k<=N-1;k=k+1){
         for (i=0;i<=N-1;i=i+1){
             for (j=0;j<=N-1;j=j+1){
+                if (max(D[i][k],D[k][j])==INT_MAX){
+                    continue;
+                }
                 if (D[i][j]>D[i][k]+D[k][j]){
                     D[i][j]=D[i][k]+D[k][j];
                 }

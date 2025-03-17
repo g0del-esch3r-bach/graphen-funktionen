@@ -21,6 +21,9 @@ float efficiency(int A[][1000],int N){
     for (k=0;k<=N-1;k=k+1){
         for (i=0;i<=N-1;i=i+1){
             for (j=0;j<=N-1;j=j+1){
+                if (max(D[i][k],D[k][j])==INT_MAX){
+                    continue;
+                }
                 if (D[i][j]>D[i][k]+D[k][j]){
                     D[i][j]=D[i][k]+D[k][j];
                 }
