@@ -1,7 +1,6 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-//const int INFTY = 99999;
 float avgdist(int A[][1000],int N){
     int D[N][N],i,j,k;
     float ans;
