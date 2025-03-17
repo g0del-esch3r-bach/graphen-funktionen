@@ -31,13 +31,10 @@ float avgdist(int A[][1000],int N){
     for (i=0;i<=N-1;i=i+1){
         for (j=0;j<=i-1;j=j+1){
             if (D[i][j]==INFTY){
-                ans=-INFTY;
+                return INT_MAX;
             }
             ans+=D[i][j];
         }
-    }
-    if (ans<0){
-        return INFTY;
     }
     ans=ans/(N*(N-1)/2);
     return ans;
@@ -65,8 +62,8 @@ int main(){
         }
     }
     cost=3*alpha*avgdist(A,N)/((float)(N+1))+2*(1-alpha)*numedge(A,N)/((float)(N*(N-1)));
-    if (avgdist(A,N)==INFTY){
-        cost=INFTY;
+    if (avgdist(A,N)==INT_MAX){
+        cost=INT_MAX;
     }
     cout<<"C(G) = "<<cost;
     return 0;
