@@ -3,8 +3,8 @@
 using namespace std;
 //const int INFTY = 99999;
 float efficiency(int A[][1000],int N){
-    int D[N][N],i,j,k;
-    float ans;
+    int i,j,k;
+    float D[N][N],ans;
     for (i=0;i<=N-1;i=i+1){
         for (j=0;j<=N-1;j=j+1){
             if (i==j){
