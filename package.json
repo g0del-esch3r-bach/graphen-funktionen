@@ -1,7 +1,7 @@
 {
   "name": "cost-func",
   "version": "1.0.0",
-  "description": "Graph Theory Season 3. Cloned from A001349, only thing that needs to be here is elements.cpp elements.cpp takes in an adjacency matrix and value alpha and outputs the two values that we need for the cost function (average path length L, number of edges E) as well as the cost function itself",
+  "description": "here we go again",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/g0del-esch3r-bach/cancho-cost-func.git"
+    "url": "git+https://github.com/g0del-esch3r-bach/graphen-funktionen.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/g0del-esch3r-bach/cancho-cost-func/issues"
+    "url": "https://github.com/g0del-esch3r-bach/graphen-funktionen/issues"
   },
-  "homepage": "https://github.com/g0del-esch3r-bach/cancho-cost-func#readme",
+  "homepage": "https://github.com/g0del-esch3r-bach/graphen-funktionen#readme",
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.2"
