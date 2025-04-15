@@ -13,7 +13,7 @@ float numedge(int A[][1000],int N){
     return ans;
 }
 int main(){
-    //freopen("adj.txt","r",stdin);
+    //freopen("../adj.txt","r",stdin);
     int N,i,j;
     float alpha,cost;
     cin>>N>>alpha;
