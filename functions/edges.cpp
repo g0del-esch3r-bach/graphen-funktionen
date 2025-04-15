@@ -23,6 +23,6 @@ int main(){
             cin>>A[i][j];
         }
     }
-    cout<<"L(G) = "<<numedge(A,N);
+    cout<<"E(G) = "<<numedge(A,N);
     return 0;
 }
