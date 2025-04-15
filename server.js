@@ -15,7 +15,7 @@ app.use(bodyParser.text({ type: 'text/plain' }));
 
 app.post('/calculate', (req, res) => {
   const inputData = req.body;
-  const executables = ['avgdist', 'cancho', 'edges', 'efficiency'];
+  const executables = ['avgdist', 'cancho', 'edges', 'efficiency', 'eigen2'];
   const results = {};
   let completed = 0;
 
